@@ -1,0 +1,21 @@
+{
+  "name": "xusd-marketcap-twitter-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "accounting-js": "^1.1.1",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "twitter-api-client": "^1.5.2",
+    "twitter-api-v2": "^1.11.2"
+  }
+}
