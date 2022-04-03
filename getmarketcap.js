@@ -5,7 +5,6 @@ export default async function getMarketCap() {
     const res = await axios.get(
       "https://explorer.havenprotocol.org/api/supply"
     );
-    // .then((res) => console.log(res));
     return res;
   } catch (err) {
     console.error(err);
