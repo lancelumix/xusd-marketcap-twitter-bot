@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import { TwitterClient } from "twitter-api-client";
 import accounting from "accounting-js";
+import timestamp from "unix-timestamp";
 
 import getMarketCap from "./getmarketcap.js";
 
@@ -13,12 +14,27 @@ const twitterClient = new TwitterClient({
   accessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
+const currentdate = new Date();
+const datetime =
+  +currentdate.getDate() +
+  "/" +
+  (currentdate.getMonth() + 1) +
+  "/" +
+  currentdate.getFullYear() +
+  " @ " +
+  currentdate.getHours() +
+  ":" +
+  currentdate.getMinutes() +
+  ":" +
+  currentdate.getSeconds() +
+  " ET";
+
 const res = await getMarketCap();
 const tweet =
   "$xUSD Market Cap is " +
-  accounting.formatMoney(Number(res.data.XUSD, "$", 0)).slice(0, -3);
-
-console.log(tweet);
+  accounting.formatMoney(Number(res.data.XUSD, "$", 0)).slice(0, -3) +
+  "\n" +
+  datetime;
 
 twitterClient.tweets
   .statusesUpdate({
