@@ -15,7 +15,10 @@
     "accounting-js": "^1.1.1",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
-    "twitter-api-client": "^1.5.2",
-    "twitter-api-v2": "^1.11.2"
+    "got": "^12.0.3",
+    "needle": "^3.0.0",
+    "oauth-1.0a": "^2.2.6",
+    "puppeteer": "^13.5.2",
+    "twitter-api-client": "^1.5.2"
   }
 }
